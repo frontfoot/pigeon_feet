@@ -1,0 +1,1 @@
+@PigeonFeet = angular.module('PigeonFeet', [])

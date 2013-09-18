@@ -1,0 +1,11 @@
+<div ng-app='PigeonFeet'>
+  <span time-tracker=<%= (Time.now + 4.hours).to_i * 1000 %>>
+    {{ time_tracker_output | distance_in_time }}
+  </span>
+  <div time-tracker=<%= (Time.now + 5.hours).to_i * 1000 %>>
+    {{ time_tracker_output | distance_in_time }}
+  </div>
+  <div time-tracker=<%= nil %>>
+    {{ time_tracker_output | distance_in_time }}
+  </div>
+</div>
