@@ -42,3 +42,16 @@ describe 'PigeonFeet', ->
     $compile($elem)(scope)
     scope.$digest()
     expect( $elem.html() ).toMatch //
+
+
+  iit 'adds highlight class when < 5mins', inject ($rootScope, $compile) ->
+    scope = $rootScope
+    $elem = angular.element '''
+      <any time-tracker="4321">{{ time_tracker_output }}</any>
+    '''
+    
+    spyOn($elem, 'addClass').andReturn null
+    $compile($elem)(scope)
+    scope.$digest()
+    console.log($elem.class)
+    expect( $elem.addClass ).toHaveBeenCalled()
