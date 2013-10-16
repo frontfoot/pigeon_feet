@@ -7,7 +7,8 @@ Blah = ($timeout) ->
       @details = $scope.time_tracker_output = $attrs.timeTracker.toString()
 
       isRaceSoon = =>
-        (Date.now() - @details) <= 300000 # 5 mins
+        ref = (Date.now() - @details)
+        ref <= 300000 && ref >= 0
 
       updateTimestamp = =>
         $elem.addClass('highlighted') if isRaceSoon()
