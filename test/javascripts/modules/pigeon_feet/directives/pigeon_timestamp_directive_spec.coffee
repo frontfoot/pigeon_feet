@@ -53,5 +53,4 @@ describe 'PigeonFeet', ->
     spyOn($elem, 'addClass').andReturn null
     $compile($elem)(scope)
     scope.$digest()
-    console.log($elem.class)
     expect( $elem.addClass ).toHaveBeenCalled()
