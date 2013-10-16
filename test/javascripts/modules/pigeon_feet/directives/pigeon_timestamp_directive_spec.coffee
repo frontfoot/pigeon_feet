@@ -44,7 +44,7 @@ describe 'PigeonFeet', ->
     expect( $elem.html() ).toMatch //
 
 
-  iit 'adds highlight class when < 5mins', inject ($rootScope, $compile) ->
+  it 'adds highlight class when < 5mins', inject ($rootScope, $compile) ->
     scope = $rootScope
     $elem = angular.element '''
       <any time-tracker="4321">{{ time_tracker_output }}</any>
