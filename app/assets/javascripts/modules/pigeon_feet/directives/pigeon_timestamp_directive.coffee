@@ -7,7 +7,7 @@ Blah = ($timeout) ->
       @details = $scope.time_tracker_output = $attrs.timeTracker.toString()
 
       isRaceSoon = =>
-        ref = (Date.now() - @details)
+        ref = (@details - Date.now())
         ref <= 300000 && ref >= 0
 
       updateTimestamp = =>

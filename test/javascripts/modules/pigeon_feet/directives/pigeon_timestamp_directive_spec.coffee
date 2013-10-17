@@ -45,10 +45,13 @@ describe 'PigeonFeet', ->
 
 
   it 'adds highlight class when < 5mins', inject ($rootScope, $compile) ->
+    hours = (diff) -> Date.now() + diff * 3600000
     scope = $rootScope
     $elem = angular.element '''
-      <any time-tracker="4321">{{ time_tracker_output }}</any>
+      <any time-tracker="#{hours(0.05)}">{{ time_tracker_output }}</any>
     '''
+
+    console.log hours(0.05)
     
     spyOn($elem, 'addClass').andReturn null
     $compile($elem)(scope)
